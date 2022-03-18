@@ -10,12 +10,12 @@ class CommonToursActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_tours)
 
-        val backToMain = findViewById<Button>(R.id.btnBackToMain)
-        backToMain.setOnClickListener {
-            //finish()
-            Intent(this, MainActivity::class.java).also {
+        val toMap = findViewById<Button>(R.id.btnMap)
+        toMap.setOnClickListener {
+            Intent(this, TourActivity::class.java).also {
                 startActivity(it)
             }
         }
+
     }
 }

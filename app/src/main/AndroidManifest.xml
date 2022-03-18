@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlliGatorsTours">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".TourActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tour" />
+        <activity
+            android:name=".CommonToursActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CommonToursActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

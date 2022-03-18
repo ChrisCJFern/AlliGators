@@ -30,7 +30,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnMap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -57,16 +57,5 @@
             android:layout_margin="10dp"
             android:text="Liberal Arts and Sciences" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnBackToMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Back"
-        android:backgroundTint="@color/material_on_background_disabled"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

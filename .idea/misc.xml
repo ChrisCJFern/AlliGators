@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/GitHub/AlliGators/app/src/main/res/layout/activity_common_tours.xml" value="0.246875" />
+        <entry key="..\:/GitHub/AlliGators/app/src/main/res/layout/activity_cicerone_tour.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/AlliGators/app/src/main/res/layout/activity_common_tours.xml" value="0.1" />
         <entry key="..\:/GitHub/AlliGators/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/GitHub/AlliGators/app/src/main/res/layout/activity_tour.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

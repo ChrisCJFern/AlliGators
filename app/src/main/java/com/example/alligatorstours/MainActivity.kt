@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val toCommonTours = findViewById<Button>(R.id.btnToCommonTours)
-        if (toCommonTours is Button) Log.d("status", "found the button")
         toCommonTours.setOnClickListener {
             Intent(this, CommonToursActivity::class.java).also {
                 startActivity(it)
