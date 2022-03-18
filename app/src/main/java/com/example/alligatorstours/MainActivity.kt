@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        val toCustomize = findViewById<Button>(R.id.btnCustomize)
+        toCustomize.setOnClickListener {
+            Intent(this, CustomizeActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
 }
