@@ -6,20 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.alligatorstours.databinding.ActivityTourBinding
+import com.google.android.gms.maps.*
 
 class TourActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityTourBinding
-
-    val locsMap = HashMap<String, LatLng>()
+    private var locsMap = HashMap<String, LatLng>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +32,7 @@ class TourActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
         val locList = intent.getStringArrayListExtra("EXTRA_LOCATIONS")
 
         locsMap["Reitz Union"] = LatLng(29.6457017443439, -82.3486471463526)
@@ -46,10 +43,6 @@ class TourActivity : AppCompatActivity(), OnMapReadyCallback {
         locsMap["Marston Science Library"] = LatLng(29.648217193648133, -82.34377838868227)
         locsMap["Ben Hill Griffin Stadium"] = LatLng(29.650140294458456, -82.34868274578238)
         locsMap["The Hub"] = LatLng(29.64846085003454, -82.34597309976017)
-
-        if (locList != null) {
-            Log.d("count", "locList has ${locList.size} elements")
-        }
 
         // Add a marker at UF and move the camera
         val uf = LatLng(29.6438, -82.3548)
@@ -65,7 +58,7 @@ class TourActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(uf, 14.0f))
-
-
+        mMap.uiSettings.isZoomControlsEnabled = true
+        mMap.uiSettings.setAllGesturesEnabled(true)
     }
 }
