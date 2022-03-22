@@ -4,7 +4,7 @@
 The Pre-Alpha Build currently guides the user through a series of screens and into a map where the majority of app time will be spent. The user can select specific locations to visit on their tour, which are populated as markers on the map. Zoom and gesture controls are enabled on the map, and it will soon be augmented to include step-by-step directions and contextual information.
 
 ## External Interface
-The app currently displays a series of screens guiding the user through the basic process of starting a tour.
+The app currently displays a series of screens guiding the user through the basic process of starting a tour. Each screen contains buttons which can be used to navigate other screens.
 
 ## Persistent State
 The user's selection information is passed from one screen to the next, to be displayed on the map during the tour.
