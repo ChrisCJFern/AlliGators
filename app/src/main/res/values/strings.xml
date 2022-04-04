@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Alli Gators Tours</string>
+    <string name="title_activity_tour">Tour In Progress</string>
 </resources>
