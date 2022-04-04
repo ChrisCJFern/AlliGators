@@ -16,6 +16,18 @@
             android:name=".ChatActivity"
             android:exported="false" />
         <activity
+            android:name=".CommonToursActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomizeActivity"
+            android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+        <activity
+            android:name=".TourActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
