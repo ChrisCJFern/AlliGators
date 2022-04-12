@@ -5,7 +5,6 @@ import android.graphics.Camera
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.alligatorstours.databinding.ActivityTourBinding

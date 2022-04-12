@@ -2,21 +2,36 @@ package com.example.alligatorstours
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import android.os.StrictMode
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.text.Html
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import com.example.alligatorstours.cca2client.CCA2Client
 import kotlinx.android.synthetic.main.activity_chat.*
 import java.util.*
 
-class ChatActivity : AppCompatActivity() {
-    private val RQ_SPEECH_REC = 102
 
+class ChatActivity : AppCompatActivity() {
+    var cca2ContextPath = BuildConfig.CCA_ENDPOINT
+    var cca2Auth = BuildConfig.CCA_AUTH
+    var cogbotId = BuildConfig.COGBOT_ID
+    var language = "en-us"
+    var country = "us"
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+        val textView = findViewById<TextView>(R.id.tv_text)
+
+        callClient("Hey Alli, where were you born?", textView)
 
         btn_speech.setOnClickListener(){
             askSpeechInput()
@@ -43,6 +58,23 @@ class ChatActivity : AppCompatActivity() {
             i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
             i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Talk to Alli!")
             getResult.launch(i)
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun callClient(input: String, view: TextView) {
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+
+        val cca2Client = CCA2Client(cca2ContextPath, cca2Auth, cogbotId, language, country)
+
+        val messageResponse: List<List<String>> = cca2Client.callMessageApi(input)
+        view.text = ""
+        for (list in messageResponse) {
+            for (item in list) {
+                println(item)
+                view.append(Html.fromHtml(item, 0, null, null))
+            }
         }
     }
 }
