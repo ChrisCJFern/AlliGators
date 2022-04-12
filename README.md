@@ -1,3 +1,16 @@
+# How to Run
+To run this application, you will need to obtain a Google Maps API key, as well as CogUniversity authorization credentials. The developers can provide this information if we want to.
+## Steps
+<ol>
+<li>Download and Install Android Studio</li>
+<li>Enable the latest Android SDK and emulation features</li>
+<li>Set up a device emulator in Android Studio, or use your own if you own an android device</li>
+<li>Clone this repository into a new directory</li>
+<li>Open the project in Android Studio</li>
+<li>Sync the project's Gradle files by clicking on the elephant icon in the top right. This will install any needed dependencies</li>
+<li>Run the app by clicking the green play button.</li>
+</ol>
+
 # AlliGators Pre-Alpha Build
 
 ## Overview
