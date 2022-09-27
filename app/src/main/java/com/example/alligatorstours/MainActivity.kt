@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
         val toCustomize = findViewById<Button>(R.id.btnCustomize)
         toCustomize.setOnClickListener {
-            Intent(this, CustomizeActivity::class.java).also {
+            Intent(this, StartingPoint::class.java).also {
                 startActivity(it)
             }
         }

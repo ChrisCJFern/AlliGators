@@ -68,6 +68,7 @@ public class CCA2Client {
     }
 
     // helper function
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public List<List<String>> callMessageApi(String text) throws MalformedURLException {
         MessageResponse messageResponse = callMessageApi(buildMessageRequest(text));
 

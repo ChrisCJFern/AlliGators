@@ -31,8 +31,13 @@ class CustomizeActivity : AppCompatActivity() {
                 }
             }
 
+            val origin = intent.extras!!.getString("ORIGIN")
+            val destination = intent.extras!!.getString("DESTINATION")
+
             Intent(this, TourActivity::class.java).also {
                 it.putExtra("EXTRA_LOCATIONS", inputArray)
+                it.putExtra("ORIGIN", origin)
+                it.putExtra("DESTINATION", destination)
                 startActivity(it)
             }
         }

@@ -19,7 +19,7 @@ import java.util.*
 
 
 class ChatActivity : AppCompatActivity() {
-    var cca2ContextPath = BuildConfig.CCA_ENDPOINT
+    var cca2ContextPath = BuildConfig.CCA_CONTEXT_PATH
     var cca2Auth = BuildConfig.CCA_AUTH
     var cogbotId = BuildConfig.COGBOT_ID
     var language = "en-us"
