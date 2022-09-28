@@ -31,10 +31,9 @@ class ChatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
         val textView = findViewById<TextView>(R.id.tv_text)
 
-        callClient("Hey Alli, where were you born?", textView)
-
         btn_speech.setOnClickListener(){
             askSpeechInput()
+            callClient("Who are you?", textView)
         }
     }
 

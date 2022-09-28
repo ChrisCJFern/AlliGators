@@ -117,9 +117,16 @@ class TourActivity : AppCompatActivity(),
 
         // Add a marker at UF and move the camera
         val uf = LatLng(29.6438, -82.3548)
-        mMap.addMarker(MarkerOptions()
-            .position(uf)
-            .title("Go Gators!"))
+//        mMap.addMarker(MarkerOptions()
+//            .position(uf)
+//            .title("Go Gators!"))
+
+//        val origin = intent.extras!!.getString("ORIGIN")
+//        val originLocation = LatLng(locsMap[origin]!!.latitude, locsMap[origin]!!.longitude)
+//        mMap.addMarker(MarkerOptions().position(originLocation).title(origin))
+//        val destination = intent.extras!!.getString("DESTINATION")
+//        val destinationLocation = LatLng(locsMap[destination]!!.latitude, locsMap[destination]!!.longitude)
+//        mMap.addMarker(MarkerOptions().position(destinationLocation).title(destination))
 
         if (locList != null) {
             for (loc in locList) {
