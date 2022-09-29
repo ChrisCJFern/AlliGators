@@ -8,6 +8,16 @@
         <entry key="..\:/Users/Ricardo Sanchez/Documents/GitHub/AlliGators/app/src/main/res/layout/activity_chat.xml" value="0.18012422360248448" />
         <entry key="..\:/Users/Ricardo Sanchez/Documents/GitHub/AlliGators/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/cjoma/AndroidStudioProjects/AlliGatorsTours/app/src/main/res/layout/activity_main.xml" value="0.33" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_chat.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_common_tours.xml" value="0.2712765957446808" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_customize.xml" value="0.1" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_ending_point.xml" value="0.39010416666666664" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_starting_point.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/activity_tour.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ricky/Documents/AlliGators/app/src/main/res/layout/content_scrolling.xml" value="0.4041666666666667" />
+=======
         <entry key="app/src/main/res/drawable/receive_round_box.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/send_round_box.xml" value="0.1" />
@@ -15,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_common_tours.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customize.xml" value="0.18582000732421877" />
         <entry key="app/src/main/res/layout/message_item.xml" value="0.1" />
+>>>>>>> 282590da7229a6b9a4bdbe677858caff5f9f9b67
       </map>
     </option>
   </component>
