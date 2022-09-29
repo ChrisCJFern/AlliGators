@@ -21,7 +21,7 @@
             android:name=".StartingPoint"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".chatbot.ui.ChatActivity"
             android:exported="false" />
         <activity
             android:name=".CommonToursActivity"

@@ -1,4 +1,4 @@
-package com.example.alligatorstours.cca2client.types;
+package com.example.alligatorstours.chatbot.cca2client.types;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,8 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class DialogOptionsElementValue {
+public class DialogOptionsElement {
 
-    private MessageInput input;
+    private String label;
+    private DialogOptionsElementValue value;
 }

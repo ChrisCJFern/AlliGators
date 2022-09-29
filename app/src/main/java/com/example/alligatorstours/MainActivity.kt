@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import kotlinx.android.synthetic.main.activity_chat.*
+import com.example.alligatorstours.chatbot.ui.ChatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         floatingActionButton.setOnClickListener{
-            Intent(this,ChatActivity::class.java).also{
+            Intent(this, ChatActivity::class.java).also{
                 startActivity(it)
             }
         }

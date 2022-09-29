@@ -1,10 +1,19 @@
-package com.example.alligatorstours.cca2client;
+package com.example.alligatorstours.chatbot.cca2client;
 
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.alligatorstours.cca2client.types.*;
+import com.example.alligatorstours.chatbot.cca2client.types.*;
+import com.example.alligatorstours.chatbot.cca2client.types.GenericResponse;
+import com.example.alligatorstours.chatbot.cca2client.types.InitResponse;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageContext;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageContextGlobal;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageContextGlobalSystem;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageInput;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageInputOptions;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageRequest;
+import com.example.alligatorstours.chatbot.cca2client.types.MessageResponse;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.InputStreamReader;
