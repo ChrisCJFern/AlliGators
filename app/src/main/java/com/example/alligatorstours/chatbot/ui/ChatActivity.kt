@@ -1,4 +1,4 @@
-package com.example.alligatorstours
+package com.example.alligatorstours.chatbot.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -13,6 +13,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.alligatorstours.BuildConfig
+import com.example.alligatorstours.R
 import com.example.alligatorstours.cca2client.CCA2Client
 import kotlinx.android.synthetic.main.activity_chat.*
 import java.util.*

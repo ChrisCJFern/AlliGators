@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ChatActivity">
+    tools:context=".chatbot.ui.ChatActivity">
 
 
     <LinearLayout
@@ -37,9 +37,23 @@
             android:background="@drawable/round_button"
             android:backgroundTint="#26A69A"
             android:text="Send"
+            android:textSize="10dp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_speech"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#26A69A"
+            android:text="Talk"
+            android:textSize="10dp"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_messages"
@@ -55,6 +69,14 @@
         android:background="#42A5F5"
         android:id="@+id/dark_divider"/>
 
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:textSize="16sp"
+        android:padding="5sp"
+        android:text="Text should be displayed here" />
 
 </RelativeLayout>
 
