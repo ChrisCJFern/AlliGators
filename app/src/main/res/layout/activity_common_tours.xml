@@ -28,28 +28,28 @@
 
 
         <Button
-            android:id="@+id/btnMap"
+            android:id="@+id/generalTour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="General Campus Tour" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/historicalTour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Historical Tour" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/engineeringTour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="College of Engineering" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/LAnSTour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
