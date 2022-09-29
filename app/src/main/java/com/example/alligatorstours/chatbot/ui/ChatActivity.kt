@@ -13,10 +13,16 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.alligatorstours.BuildConfig
 import com.example.alligatorstours.R
 import com.example.alligatorstours.chatbot.cca2client.CCA2Client
+import com.example.alligatorstours.chatbot.data.Message
+import com.example.alligatorstours.chatbot.utils.Constants.RECEIVE_ID
+import com.example.alligatorstours.chatbot.utils.Constants.SEND_ID
+import com.example.alligatorstours.chatbot.utils.Time
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.coroutines.*
 import java.util.*
 
 
@@ -27,11 +33,20 @@ class ChatActivity : AppCompatActivity() {
     var language = "en-us"
     var country = "us"
 
+    private lateinit var adapter: MessagingAdapter
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
         val textView = findViewById<TextView>(R.id.tv_text)
+
+        recyclerView()
+
+        clickEvents()
+        customMessage("Hello! Today you're speaking with Alli. How may I help?")
+
+
 
         btn_speech.setOnClickListener(){
             askSpeechInput()
@@ -82,6 +97,39 @@ class ChatActivity : AppCompatActivity() {
             for (item in list) {
                 println(item)
                 view.append(Html.fromHtml(item, 0, null, null))
+            }
+        }
+    }
+
+    private fun recyclerView() {
+        adapter = MessagingAdapter()
+        rv_messages.adapter = adapter
+        rv_messages.layoutManager = LinearLayoutManager(applicationContext)
+    }
+
+    private fun sendMessage() {
+        val message = et_message.text.toString()
+        val timeStamp = Time.timeStamp()
+
+        if (message.isNotEmpty()) {
+            et_message.setText("")
+
+            adapter.insertMessage(Message(message, SEND_ID, timeStamp))
+            rv_messages.scrollToPosition(adapter.itemCount - 1)
+
+            // TODO: get message from chatbot
+
+        }
+    }
+
+    private fun customMessage(message: String) {
+        GlobalScope.launch {
+            delay(1000)
+            withContext(Dispatchers.Main) {
+                val timeStamp = Time.timeStamp()
+                adapter.insertMessage(Message(message, RECEIVE_ID, timeStamp))
+
+                rv_messages.scrollToPosition(adapter.itemCount - 1)
             }
         }
     }
