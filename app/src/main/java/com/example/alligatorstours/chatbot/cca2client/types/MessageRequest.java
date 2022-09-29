@@ -1,4 +1,4 @@
-package com.example.alligatorstours.cca2client.types;
+package com.example.alligatorstours.chatbot.cca2client.types;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

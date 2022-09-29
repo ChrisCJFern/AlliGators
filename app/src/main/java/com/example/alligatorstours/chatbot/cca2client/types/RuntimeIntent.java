@@ -1,6 +1,5 @@
-package com.example.alligatorstours.cca2client.types;
+package com.example.alligatorstours.chatbot.cca2client.types;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +9,8 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CaptureGroup {
+public class RuntimeIntent {
 
-    private String group;
-    private List<Long> location;
-
+    private String intent;
+    private Double confidence;
 }
