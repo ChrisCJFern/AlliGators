@@ -37,19 +37,7 @@
             android:background="@drawable/round_button"
             android:backgroundTint="#26A69A"
             android:text="Send"
-            android:textSize="10dp"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/btn_speech"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_button"
-            android:backgroundTint="#26A69A"
-            android:text="Talk"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
@@ -59,71 +47,9 @@
         android:id="@+id/rv_messages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_above="@id/ll_layout_bar"
-        android:layout_below="@+id/dark_divider"
         tools:itemCount="20"
         tools:listitem="@layout/message_item" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#42A5F5"
-        android:id="@+id/dark_divider"/>
-
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"
-        android:textSize="16sp"
-        android:padding="5sp"
-        android:text="Text should be displayed here" />
 
 </RelativeLayout>
-
-<!--
-FIXME: Add the speech to text
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ChatActivity">
-
-    <Button
-        android:id="@+id/btn_speech"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Speech to text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:textSize="16sp"
-        android:padding="5sp"
-        android:text="Text should be displayed here"
-        app:layout_constraintBottom_toTopOf="@+id/btn_speech"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey Alli, where were you born?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
--->

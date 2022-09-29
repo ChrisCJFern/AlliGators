@@ -39,46 +39,32 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
-        val textView = findViewById<TextView>(R.id.tv_text)
 
         recyclerView()
 
         clickEvents()
         customMessage("Hello! Today you're speaking with Alli. How may I help?")
-
-
-
-        btn_speech.setOnClickListener(){
-            askSpeechInput()
-            callClient("Who are you?", textView)
-        }
     }
 
-    private val getResult =
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ){
-            if(it.resultCode == Activity.RESULT_OK){
-                val value = it.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                tv_text.text = value?.get(0).toString()
-            }
+    private fun clickEvents() {
+        btn_send.setOnClickListener {
+            sendMessage()
         }
 
-    private fun askSpeechInput(){
-        if(!SpeechRecognizer.isRecognitionAvailable(this)) {
-            Toast.makeText(this, "Speech recognition is not available", Toast.LENGTH_SHORT).show()
-        }
-        else{
-            val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-            i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Talk to Alli!")
-            getResult.launch(i)
+        et_message.setOnClickListener {
+            GlobalScope.launch {
+                delay(100)
+                withContext(Dispatchers.Main) {
+                    rv_messages.scrollToPosition(adapter.itemCount - 1)
+                }
+            }
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    private fun callClient(input: String, view: TextView) {
+    private fun callClient(input: String) {
+        val timeStamp = Time.timeStamp()
+
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
@@ -92,11 +78,32 @@ class ChatActivity : AppCompatActivity() {
             )
 
         val messageResponse: List<List<String>> = cca2Client.callMessageApi(input)
-        view.text = ""
+        //view.text = ""
+        var response = ""
         for (list in messageResponse) {
             for (item in list) {
                 println(item)
-                view.append(Html.fromHtml(item, 0, null, null))
+                //view.append(Html.fromHtml(item, 0, null, null))
+                response += Html.fromHtml(item, 0, null, null).toString()
+            }
+        }
+
+        GlobalScope.launch {
+            delay(1000)
+            withContext(Dispatchers.Main) {
+                adapter.insertMessage(Message(response, RECEIVE_ID, timeStamp))
+                rv_messages.scrollToPosition(adapter.itemCount - 1)
+            }
+        }
+    }
+
+    override fun onStart() { // keep at bottom of screen
+        super.onStart()
+
+        GlobalScope.launch {
+            delay(1000)
+            withContext(Dispatchers.Main) {
+                rv_messages.scrollToPosition(adapter.itemCount - 1)
             }
         }
     }
@@ -117,8 +124,7 @@ class ChatActivity : AppCompatActivity() {
             adapter.insertMessage(Message(message, SEND_ID, timeStamp))
             rv_messages.scrollToPosition(adapter.itemCount - 1)
 
-            // TODO: get message from chatbot
-
+            callClient(message)
         }
     }
 
