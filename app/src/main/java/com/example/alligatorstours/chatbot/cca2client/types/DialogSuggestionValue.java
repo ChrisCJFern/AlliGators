@@ -1,4 +1,4 @@
-package com.example.alligatorstours.cca2client.types;
+package com.example.alligatorstours.chatbot.cca2client.types;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

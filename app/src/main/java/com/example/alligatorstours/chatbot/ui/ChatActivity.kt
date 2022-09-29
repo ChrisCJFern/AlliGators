@@ -15,7 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.alligatorstours.BuildConfig
 import com.example.alligatorstours.R
-import com.example.alligatorstours.cca2client.CCA2Client
+import com.example.alligatorstours.chatbot.cca2client.CCA2Client
 import kotlinx.android.synthetic.main.activity_chat.*
 import java.util.*
 
@@ -67,7 +67,14 @@ class ChatActivity : AppCompatActivity() {
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-        val cca2Client = CCA2Client(cca2ContextPath, cca2Auth, cogbotId, language, country)
+        val cca2Client =
+            CCA2Client(
+                cca2ContextPath,
+                cca2Auth,
+                cogbotId,
+                language,
+                country
+            )
 
         val messageResponse: List<List<String>> = cca2Client.callMessageApi(input)
         view.text = ""
