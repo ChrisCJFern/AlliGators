@@ -34,46 +34,44 @@ The API calls (Google Maps API and Chatbot API) are carried out asynchronously a
 ## Build Quality
 
 ### Robustness
-Tour functionality - TODO 
-Integration with BLE beacons - Still a work in progress. Currently, we have a sample app that can detect when the phone is within a certain geofence (or location), but this has not been fully integrated into the app yet.
-Chatbot integration with Alli - When a user asks a general UF question, the chatbot API is called and a response is generated. When using the chatbot, crashes have occured, but they are very rare. I believe these crashes are more on the chatbot API side however rather than them being created through our application. The answers the chatbot gives still need to be parsed so that links are generated as links rather than just text. Users are also able to use speech-to-text which works as long as the user speaks clearly.
+* Tour functionality - TODO 
+* Integration with BLE beacons - Still a work in progress. Currently, we have a sample app that can detect when the phone is within a certain geofence (or location), but this has not been fully integrated into the app yet.
+* Chatbot integration with Alli - When a user asks a general UF question, the chatbot API is called and a response is generated. When using the chatbot, crashes have occured, but they are very rare. I believe these crashes are more on the chatbot API side however rather than them being created through our application. The answers the chatbot gives still need to be parsed so that links are generated as links rather than just text. Users are also able to use speech-to-text which works as long as the user speaks clearly.
+* When processing data, null safety is practiced. The same will go for attempts to connect to external services such as other APIs, Beacons, or ChatBots.
 
 ### Consistency
-Tour functionality - TODO
-Integration with BLE beacons - Still a work in progress. Once this is implemented, a user should be notified when they are within a certain distance of a tour landmark.
-Chatbot integration with Alli - The answers given by the Alli chatbot are consistent. If a user asks the same question, the same answer is given (it depends on the specific wording given). For training the chatbot, answers can be reviewed in Cogability's website to rate the answers and give one better suited to the question. In addition, when a user clicks on a message, the messages are deleted without fail.
+* Tour functionality - TODO
+* Integration with BLE beacons - Still a work in progress. Once this is implemented, a user should be notified when they are within a certain distance of a tour landmark.
+* Chatbot integration with Alli - The answers given by the Alli chatbot are consistent. If a user asks the same question, the same answer is given (it depends on the specific wording given). For training the chatbot, answers can be reviewed in Cogability's website to rate the answers and give one better suited to the question. In addition, when a user clicks on a message, the messages are deleted without fail.
 
 ### Aesthetic Rigor
-Tour functionality - TODO
-Integration with BLE beacons - Still a work in progress. The plan is that this will be implemented as both a notification and a screen that describes the landmark the user has come across. 
-Chatbot integration with Alli - There is a small wait time between when the user sends the question as the API is generating a response, but we plan on integrating a small waiting symbol to make this a little more seemless (so the user doesn't just think the app has crashed). The screen is implemented as a texting application in which the user's messages are displayed in a bubble on the right and the chatbot's messages are displayed on the left. As the user asks more questions and the chatbot answers, the messages scroll. The user can choose to scroll to previous messages or delete messages by clicking on the specific message. 
+* Tour functionality - TODO
+* Integration with BLE beacons - Still a work in progress. The plan is that this will be implemented as both a notification and a screen that describes the landmark the user has come across. 
+* Chatbot integration with Alli - There is a small wait time between when the user sends the question as the API is generating a response, but we plan on integrating a small waiting symbol to make this a little more seemless (so the user doesn't just think the app has crashed). The screen is implemented as a texting application in which the user's messages are displayed in a bubble on the right and the chatbot's messages are displayed on the left. As the user asks more questions and the chatbot answers, the messages scroll. The user can choose to scroll to previous messages or delete messages by clicking on the specific message. 
 
 ## Vertical Features
 
 ### Major Use-Cases
-Tour functionality - users should be able to select a tour and be guided to the different locations. Google Maps SDK and API integration for custom map display with relevant elements for a campus tour: user live location, destination markers, info windows, and directions between markers.
-Interaction with bluetooth low energy (BLE) beacons for refined location of the user in the map.
-Dynamic chat interface with “Alli Gator”, the CogAbility AI agent CogBot, to ask questions and resemble the interactions the user would have with a real tour guide.
+* Tour functionality - users should be able to select a tour and be guided to the different locations. Google Maps SDK and API integration for custom map display with relevant elements for a campus tour: user live location, destination markers, info windows, and directions between markers.
+* Interaction with bluetooth low energy (BLE) beacons for refined location of the user in the map.
+* Dynamic chat interface with “Alli Gator”, the CogAbility AI agent CogBot, to ask questions and resemble the interactions the user would have with a real tour guide.
 
 
 
 ### External Interface
-Tour functionality - users are able to choose which tour they want to take. If they make their own path, pins indicate which landmarks they have chosen. The map’s markers (pins) are connected to display the route the user should follow. Finally, the user’s live location is actively displayed on the map.
-Integration with BLE beacons - when users go within a certain distance, the app indicates that a user has crossed paths with a beacon or a geofenced location (a location that should contain a landmark, i.e. Marston). Note that this hasn’t been fully implemented yet into our repo, but we are working to get this in ASAP.
-Chatbot integration with Alli - Users can hold a chat conversation with Alli Gator, the chatbot. The chat is dynamic to simulate a casual conversation with a tour guide. Users can view Alli’s responses in chat bubbles from calling the CogBot API. Users also have the option of using speech instead of typing. They can delete previous messages by tapping/clicking on them and scroll through past messages.
+* Tour functionality - users are able to choose which tour they want to take. If they make their own path, pins indicate which landmarks they have chosen. The map’s markers (pins) are connected to display the route the user should follow. Finally, the user’s live location is actively displayed on the map.
+* Integration with BLE beacons - when users go within a certain distance, the app indicates that a user has crossed paths with a beacon or a geofenced location (a location that should contain a landmark, i.e. Marston). Note that this hasn’t been fully implemented yet into our repo, but we are working to get this in ASAP.
+* Chatbot integration with Alli - Users can hold a chat conversation with Alli Gator, the chatbot. The chat is dynamic to simulate a casual conversation with a tour guide. Users can view Alli’s responses in chat bubbles from calling the CogBot API. Users also have the option of using speech instead of typing. They can delete previous messages by tapping/clicking on them and scroll through past messages.
 
 ### Persistent State
-Tour functionality - the user's map selection information is passed from one screen to the next, to be displayed on the map during the tour. Moreover, the user’s most recent location is stored to display the most accurate live location.
-Integration with BLE beacons - users location is constantly monitored with app use. They must give permission to do this first.
-Chatbot integration with Alli - saves history of things that have been asked on the backend (used for training) as well as in the UI (chat interface) so the user can view the conversation history. Users can choose to erase previous messages if need be as well.
+* Tour functionality - the user's map selection information is passed from one screen to the next, to be displayed on the map during the tour. Moreover, the user’s most recent location is stored to display the most accurate live location.
+* Integration with BLE beacons - users location is constantly monitored with app use. They must give permission to do this first.
+* Chatbot integration with Alli - saves history of things that have been asked on the backend (used for training) as well as in the UI (chat interface) so the user can view the conversation history. Users can choose to erase previous messages if need be as well.
 
 ### Internal Systems
-Tour functionality - integration with the Google Maps API to display map information. Direction polyline between origin and destination is optimized by the API along the waypoints (stopping places in the route).
-Integration with BLE beacons - integration with the Gimbal beacons API to utilize the BLE beacons. 
-Chatbot integration with Alli - integration with the Alli chatbot API.
-
-### Integrity & Resilience
-When processing data, null safety is practiced. The same will go for attempts to connect to external services such as other APIs, Beacons, or ChatBots.
+* Tour functionality - integration with the Google Maps API to display map information. Direction polyline between origin and destination is optimized by the API along the waypoints (stopping places in the route).
+* Integration with BLE beacons - integration with the Gimbal beacons API to utilize the BLE beacons. 
+* Chatbot integration with Alli - integration with the Alli chatbot API.
 
 ## Link to Repo
 https://github.com/ChrisCJFern/AlliGators
