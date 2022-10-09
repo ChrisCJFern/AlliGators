@@ -8,7 +8,7 @@ To run this application, you will need to obtain a Google Maps API key, as well 
 <li>Clone this repository into a new directory</li>
 <li>Open the project in Android Studio</li>
 <li>Sync the project's Gradle files by clicking on the elephant icon in the top right. This will install any needed dependencies</li>
-<li>Note that valid API keys are needed to functionally run this project. Contact the creators if you believe you should have access to these keys.</li>
+<li>Note that valid API keys are needed to functionally run this project. Contact the developers if you believe you should have access to these keys.</li>
 <li>Run the app by clicking the green play button.</li>
 </ol>
 
