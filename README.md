@@ -34,18 +34,18 @@ The API calls (Google Maps API and Chatbot API) are carried out asynchronously a
 ## Build Quality
 
 ### Robustness
-* Tour functionality - TODO 
+* Tour functionality - The tour map's robustness is dependable. When the user starts the map activity, the Google Maps API is called to return the map with markers for the relevant locations. Additionally, when pressing the "Update Directions" button the Google Maps Directions API is called to return the polyline (route) to be displayed connecting the relevant locations. On rare cases, the API call is not successful but these isolated bugs are usually attributable to internet connection loss.
 * Integration with BLE beacons - Still a work in progress. Currently, we have a sample app that can detect when the phone is within a certain geofence (or location), but this has not been fully integrated into the app yet.
 * Chatbot integration with Alli - When a user asks a general UF question, the chatbot API is called and a response is generated. When using the chatbot, crashes have occured, but they are very rare. I believe these crashes are more on the chatbot API side however rather than them being created through our application. The answers the chatbot gives still need to be parsed so that links are generated as links rather than just text. Users are also able to use speech-to-text which works as long as the user speaks clearly.
 * When processing data, null safety is practiced. The same will go for attempts to connect to external services such as other APIs, Beacons, or ChatBots.
 
 ### Consistency
-* Tour functionality - TODO
+* Tour functionality - The tour feature's UI and API response is consistent. The API calls always produce the same map, markers, and polyline response; therefore, the users will not encounter unpredictability of behavior while interacting with the map. 
 * Integration with BLE beacons - Still a work in progress. Once this is implemented, a user should be notified when they are within a certain distance of a tour landmark.
 * Chatbot integration with Alli - The answers given by the Alli chatbot are consistent. If a user asks the same question, the same answer is given (it depends on the specific wording given). For training the chatbot, answers can be reviewed in Cogability's website to rate the answers and give one better suited to the question. In addition, when a user clicks on a message, the messages are deleted without fail.
 
 ### Aesthetic Rigor
-* Tour functionality - TODO
+* Tour functionality - In regard to aesthetic design, the interactive UI to customize tours is easy to understand, even when using the app for the first time. Also, the layout of options in the map is straightforward to understand since it follows the conventions of most main stream map applications. However, for aesthetics, the "Update Directions" button will be made smaller to avoid a slight overlap with corner buttons in smaller displays.
 * Integration with BLE beacons - Still a work in progress. The plan is that this will be implemented as both a notification and a screen that describes the landmark the user has come across. 
 * Chatbot integration with Alli - There is a small wait time between when the user sends the question as the API is generating a response, but we plan on integrating a small waiting symbol to make this a little more seemless (so the user doesn't just think the app has crashed). The screen is implemented as a texting application in which the user's messages are displayed in a bubble on the right and the chatbot's messages are displayed on the left. As the user asks more questions and the chatbot answers, the messages scroll. The user can choose to scroll to previous messages or delete messages by clicking on the specific message. 
 
