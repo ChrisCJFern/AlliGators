@@ -41,6 +41,7 @@ import com.google.android.gms.maps.model.Marker
 class TourActivity : AppCompatActivity(),
     OnMyLocationButtonClickListener,
     OnMyLocationClickListener,
+    GoogleMap.OnInfoWindowClickListener,
     OnMapReadyCallback,
     OnRequestPermissionsResultCallback{
 
@@ -123,6 +124,7 @@ class TourActivity : AppCompatActivity(),
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
 
+        mMap.setOnInfoWindowClickListener(this)
         mMap.setInfoWindowAdapter(CustomInfoWindow(this))
 
         val locList = intent.getStringArrayListExtra("EXTRA_LOCATIONS")
@@ -151,12 +153,6 @@ class TourActivity : AppCompatActivity(),
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(uf, 14.0f))
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.uiSettings.setAllGesturesEnabled(true)
-
-        Intent(this, CustomInfoWindow::class.java ).also{
-            it.putExtra("EXTRA_LOCATIONS", locList)
-            it.putExtra("ORIGIN", origin)
-            it.putExtra("DESTINATION", destination)
-        }
     }
 
     //Function to get Directions API URL
@@ -362,5 +358,12 @@ class TourActivity : AppCompatActivity(),
          * @see .onRequestPermissionsResult
          */
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
+    }
+
+    override fun onInfoWindowClick(marker: Marker) {
+        Intent(this, MoreInfo::class.java).also{
+            it.putExtra("TITLE", marker.title)
+            startActivity(it)
+        }
     }
 }

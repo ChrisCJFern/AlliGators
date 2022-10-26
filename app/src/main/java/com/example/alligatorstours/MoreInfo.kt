@@ -1,20 +1,18 @@
 package com.example.alligatorstours
 
-import android.app.Activity
-import android.content.Context
-import android.view.View
-import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.Marker
 
-class CustomInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter{
+class MoreInfo : AppCompatActivity() {
 
-    var mWindow = (context as Activity).layoutInflater.inflate(R.layout.custom_info_window, null)
     private var locDrawables = HashMap<String, Int>()
     private var locInfo = HashMap<String, String>()
 
-    private fun renderInfoWindow(marker: Marker, view: View){
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_more_info)
 
         locDrawables["Reitz Union"] = R.drawable.reitzunionicon
         locDrawables["Plaza of the Americas"] = R.drawable.plazaoftheamericas
@@ -162,23 +160,14 @@ class CustomInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter{
                 "group study rooms, a Starbucks coffee shop, and iPads for checkout. The library is " +
                 "open 24/7 during the fall and spring semesters.\n"
 
-        val TviewTitle = view.findViewById<TextView>(R.id.title)
-        val TviewSnippet = view.findViewById<TextView>(R.id.snippet)
-        val img = view.findViewById<ImageButton>(R.id.infoWindowButton)
+        val title = intent.extras!!.getString("TITLE")
 
-        TviewTitle.text = marker.title
-        TviewSnippet.text = locInfo[marker.title]
-        locDrawables.get(marker.title)?.let { img.setImageResource(it) }
+        val headerTitle = findViewById<TextView>(R.id.locationName)
+        val locIcon = findViewById<ImageView>(R.id.locationIcon)
+        val locationInfo = findViewById<TextView>(R.id.information)
+
+        headerTitle.text = title
+        locationInfo.text = locInfo[title]
+        locDrawables.get(title)?.let { locIcon.setImageResource(it) }
     }
-
-    override fun getInfoContents(marker: Marker): View {
-        renderInfoWindow(marker, mWindow)
-        return mWindow
-    }
-
-    override fun getInfoWindow(marker: Marker): View? {
-        renderInfoWindow(marker, mWindow)
-        return mWindow
-    }
-
 }
