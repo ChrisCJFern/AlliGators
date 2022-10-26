@@ -34,6 +34,9 @@ import okhttp3.Request
 import java.util.concurrent.Executors
 import android.os.Handler
 import android.os.Looper
+import android.widget.ImageButton
+import android.widget.ImageView
+import com.google.android.gms.maps.model.Marker
 
 class TourActivity : AppCompatActivity(),
     OnMyLocationButtonClickListener,
@@ -120,6 +123,8 @@ class TourActivity : AppCompatActivity(),
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
 
+        mMap.setInfoWindowAdapter(CustomInfoWindow(this))
+
         val locList = intent.getStringArrayListExtra("EXTRA_LOCATIONS")
 
         // Add a marker at UF and move the camera
@@ -128,23 +133,30 @@ class TourActivity : AppCompatActivity(),
 //            .position(uf)
 //            .title("Go Gators!"))
 
-//        val origin = intent.extras!!.getString("ORIGIN")
-//        val originLocation = LatLng(locsMap[origin]!!.latitude, locsMap[origin]!!.longitude)
-//        mMap.addMarker(MarkerOptions().position(originLocation).title(origin))
-//        val destination = intent.extras!!.getString("DESTINATION")
-//        val destinationLocation = LatLng(locsMap[destination]!!.latitude, locsMap[destination]!!.longitude)
-//        mMap.addMarker(MarkerOptions().position(destinationLocation).title(destination))
+        val origin = intent.extras!!.getString("ORIGIN")
+        val originLocation = LatLng(locsMap[origin]!!.latitude, locsMap[origin]!!.longitude)
+        mMap.addMarker(MarkerOptions().position(originLocation).title(origin))
+        val destination = intent.extras!!.getString("DESTINATION")
+        val destinationLocation = LatLng(locsMap[destination]!!.latitude, locsMap[destination]!!.longitude)
+        mMap.addMarker(MarkerOptions().position(destinationLocation).title(destination))
 
         if (locList != null) {
             for (loc in locList) {
                 mMap.addMarker(MarkerOptions()
                     .position(locsMap[loc]!!)
-                    .title(loc))
+                    .title(loc)
+                )
             }
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(uf, 14.0f))
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.uiSettings.setAllGesturesEnabled(true)
+
+        Intent(this, CustomInfoWindow::class.java ).also{
+            it.putExtra("EXTRA_LOCATIONS", locList)
+            it.putExtra("ORIGIN", origin)
+            it.putExtra("DESTINATION", destination)
+        }
     }
 
     //Function to get Directions API URL
