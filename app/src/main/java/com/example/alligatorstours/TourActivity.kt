@@ -36,6 +36,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.ImageButton
 import android.widget.ImageView
+import com.gimbal.android.Gimbal
 import com.google.android.gms.maps.model.Marker
 
 class TourActivity : AppCompatActivity(),
@@ -255,6 +256,7 @@ class TourActivity : AppCompatActivity(),
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             mMap.isMyLocationEnabled = true
+            Gimbal.start()
             return
         }
 

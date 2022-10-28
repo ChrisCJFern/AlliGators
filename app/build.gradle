@@ -25,6 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -40,6 +46,13 @@ android {
 }
 
 dependencies {
+    implementation 'com.gimbal.android.v4:gimbal-sdk:4.8.0'
+    implementation 'com.gimbal.android.v4:gimbal-slf4j-impl:4.8.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+
+
     annotationProcessor "org.projectlombok:lombok:1.18.22"
     compileOnly "org.projectlombok:lombok:1.18.22"
     implementation 'com.google.code.gson:gson:2.8.7'
