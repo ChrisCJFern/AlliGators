@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         // requesting permssions TODO: Move somewhere better later
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.BLUETOOTH_SCAN), 1)
-//        ActivityCompat.requestPermissions(this,
-//            arrayOf(
-//                Manifest.permission.ACCESS_FINE_LOCATION,
-//                Manifest.permission.ACCESS_COARSE_LOCATION
-//            ),2)
 
         val toCommonTours = findViewById<Button>(R.id.btnToCommonTours)
         toCommonTours.setOnClickListener {
