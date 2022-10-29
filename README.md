@@ -73,5 +73,15 @@ The API calls (Google Maps API and Chatbot API) are carried out asynchronously a
 * Integration with BLE beacons - integration with the Gimbal beacons API to utilize the BLE beacons. 
 * Chatbot integration with Alli - integration with the Alli chatbot API.
 
+## Communication
+* The application uses several APIs in order to be fully functional. 
+* For the tours, it uses the Google Maps API to display map information. Note that the user must enable location services in order to effectively use this feature. 
+* For the beacons, it communicates with the Gimbal Android Version 4 API to connect to Gimbal beacons that are within a certain range. This also communicates with a Gimbal Manager which have set up Places, Geofences, and Beacons. This manager is an external feature of the Gimbal API which must be correctly set up before the API can be used.
+* For the chatbot, Alli Tours communicates with the Cogability UF chatbot API. Calls to the API are made when a user asks a question and it responds with answers generated through Cogability's AI corpus.
+* The screens are routed so that the interface is easy to use and intuitive. Android's back button can be used to go to previous screens.
+
+## Integrity and Resilience
+* Null safety is practiced to prevent null errors. In order to ensure that the application runs correctly, an Android testing suite called Monkey is employed to generate pseudo-random streams of user events such as clicks, touches, or gestures, as well as a number of system-level events. We use this to stress-test the application and to ensure that crashes are rare and far in between. So far, the application rarely crashes and runs consistently.
+
 ## Link to Repo
 https://github.com/ChrisCJFern/AlliGators
