@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.alligatorstours.beacons.GimbalIntegration
 
 class MoreInfo : AppCompatActivity() {
 
@@ -11,6 +12,8 @@ class MoreInfo : AppCompatActivity() {
     private var locInfo = HashMap<String, String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        GimbalIntegration.instance().setAppContext(this);
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_more_info)
 

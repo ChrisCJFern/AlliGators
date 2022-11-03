@@ -5,12 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.example.alligatorstours.MoreInfo;
+import com.example.alligatorstours.TourActivity;
 import com.gimbal.android.BeaconSighting;
 import com.gimbal.android.Communication;
 import com.gimbal.android.CommunicationListener;
@@ -24,9 +27,17 @@ import com.gimbal.android.BeaconManager;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-public class GimbalIntegration {
+public class GimbalIntegration extends AppCompatActivity {
+    public void setAppContext(Context appContext) {
+        this.appContext = appContext;
+    }
+
+    public GimbalIntegration() {
+    }
+
     private static final String GIMBAL_APP_API_KEY = "232e8fda-2e7a-4f71-9a44-ddaae0f396ae";
 
     private static final int MAX_NUM_EVENTS = 100;
@@ -78,7 +89,12 @@ public class GimbalIntegration {
         placeEventListener = new PlaceEventListener() {
             @Override
             public void onVisitStart(Visit visit) {
-                Log.d("Gimbal","visited place" + visit.getPlace());
+                Log.d("Gimbal","visited place " + visit.getPlace());
+
+                // TODO: Hardcoded Century Tower
+                Intent moreinfo = new Intent(appContext, MoreInfo.class);
+                moreinfo.putExtra("TITLE", "Century Tower");
+                appContext.startActivity(moreinfo);
             }
 
             @Override
@@ -87,12 +103,14 @@ public class GimbalIntegration {
                 }
             }
 
+            // TODO: Figure out how to go back to page when beacon is sighted
             @Override
             public void onVisitEnd(Visit visit) {
+                Log.d("Gimbal", "left place " + visit.getPlace());
             }
 
             public void onBeaconSighting(BeaconSighting sighting, List<Visit> visits) {
-                Log.d("Gimbal", "beacon sighted"); // This will be invoked when a beacon assigned to a place within a current visit is sighted.
+                Log.d("Gimbal", "beacon sighted " + sighting.getBeacon().getName()); // This will be invoked when a beacon assigned to a place within a current visit is sighted.
             }
         };
         PlaceManager.getInstance().addListener(placeEventListener);
