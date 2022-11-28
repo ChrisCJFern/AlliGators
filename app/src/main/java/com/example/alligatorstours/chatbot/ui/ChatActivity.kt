@@ -8,6 +8,7 @@ import android.os.StrictMode
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.text.Html
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -47,8 +48,17 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun clickEvents() {
+
+        val progressBar = findViewById<ProgressBar>(R.id.progBar)
+
         btn_send.setOnClickListener {
-            sendMessage()
+
+            GlobalScope.launch {
+                delay(200)
+                sendMessage()
+//            progressBar.visibility = ProgressBar.INVISIBLE
+            }
+            progressBar.visibility = ProgressBar.VISIBLE
         }
 
         et_message.setOnClickListener {
@@ -63,6 +73,8 @@ class ChatActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun callClient(input: String) {
+        val progressBar = findViewById<ProgressBar>(R.id.progBar)
+
         val timeStamp = Time.timeStamp()
 
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
@@ -94,6 +106,7 @@ class ChatActivity : AppCompatActivity() {
                 adapter.insertMessage(Message(response, RECEIVE_ID, timeStamp))
                 rv_messages.scrollToPosition(adapter.itemCount - 1)
             }
+            progressBar.visibility = ProgressBar.INVISIBLE
         }
     }
 
@@ -121,8 +134,10 @@ class ChatActivity : AppCompatActivity() {
         if (message.isNotEmpty()) {
             et_message.setText("")
 
-            adapter.insertMessage(Message(message, SEND_ID, timeStamp))
-            rv_messages.scrollToPosition(adapter.itemCount - 1)
+            this@ChatActivity.runOnUiThread(java.lang.Runnable {
+                adapter.insertMessage(Message(message, SEND_ID, timeStamp))
+                rv_messages.scrollToPosition(adapter.itemCount - 1)
+            })
 
             callClient(message)
         }

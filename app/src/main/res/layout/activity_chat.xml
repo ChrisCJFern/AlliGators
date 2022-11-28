@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".chatbot.ui.ChatActivity">
 
-
     <LinearLayout
         android:id="@+id/ll_layout_bar"
         android:layout_width="match_parent"
@@ -51,5 +50,16 @@
         android:layout_above="@id/ll_layout_bar"
         tools:itemCount="20"
         tools:listitem="@layout/message_item" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progBar"
+        android:minHeight="60dp"
+        android:maxHeight="60dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:indeterminateTint="@color/quantum_lightblue800"/>
 
 </RelativeLayout>
