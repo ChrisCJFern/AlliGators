@@ -36,6 +36,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.ImageButton
 import android.widget.ImageView
+import com.example.alligatorstours.beacons.GimbalIntegration
 import com.gimbal.android.Gimbal
 import com.google.android.gms.maps.model.Marker
 
@@ -57,6 +58,8 @@ class TourActivity : AppCompatActivity(),
     private val myHandler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        GimbalIntegration.instance().setAppContext(this);
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityTourBinding.inflate(layoutInflater)

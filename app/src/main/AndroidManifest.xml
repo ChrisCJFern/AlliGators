@@ -24,6 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlliGatorsTours">
         <activity
+            android:name=".beacons.GimbalIntegration"
+            android:exported="false" />
+        <activity
             android:name=".MoreInfo"
             android:exported="false" />
         <activity

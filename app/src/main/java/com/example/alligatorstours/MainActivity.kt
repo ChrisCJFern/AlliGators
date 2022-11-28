@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // requesting permssions TODO: Move somewhere better later
+        // requesting permssions TODO: Move somewhere better later; for Android 12+ phones
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.BLUETOOTH_SCAN), 1)
 
         val toCommonTours = findViewById<Button>(R.id.btnToCommonTours)
