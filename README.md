@@ -4,7 +4,7 @@ TODO: Add picture here
 
 ### Tour the University of Florida's campus with ease 
 
-TODO: Add description here
+Alligator Tours is an Android application compatible with Android versions !!! and up. It utilizes the Google Maps API, the official University of Florida (UF) chatbot, and bluetooth low energy beacons to provide a unique user experience where prospective students and families can tour the campus and learn more about important landmarks/buildings. Users are able to choose between pre-made paths or create their own through the campus. When a user gets close to a beacon, the app will navigate to a screen containing information about the landmark the user is close to. In addition, users are able to interact with Alli, UF's official chatbot, and ask any questions in relation to the University in general.
 
 ## How to Run
 To run this application, you will need to obtain a Google Maps API key, as well as CogUniversity authorization credentials. The developers can provide this information if authorized.
@@ -31,8 +31,8 @@ TODO: Include project structure information
 
 ## Future Work
 <ol>
-  <li>Extend the application to be cross-compatible with iOS devices. This would be a good future project.</li>
-  <li>Utilize a backend for tour location information</li>
-  <li>Enhance the way the chatbot displays responses (hyperlinks, different answers, etc.)</li>
+  <li>Extend the application to be cross-compatible with iOS devices.</li>
+  <li>Create a backend for tour location information.</li>
+  <li>Enhance chatbot responses (hyperlinks, different answers, etc.).</li>
 </ol>
 
