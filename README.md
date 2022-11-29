@@ -2,7 +2,7 @@
 
 TODO: Add picture here
 
-### Tour the beautiful University of Florida with ease 
+### Tour the University of Florida's campus with ease 
 
 TODO: Add description here
 
