@@ -4,7 +4,7 @@ TODO: Add picture here
 
 ### Tour the University of Florida's campus with ease 
 
-Alligator Tours is an Android application compatible with Android versions !!! and up. It utilizes the Google Maps API, the official University of Florida (UF) chatbot, and bluetooth low energy beacons to provide a unique user experience where prospective students and families can tour the campus and learn more about important landmarks/buildings. Users are able to choose between pre-made paths or create their own through the campus. When a user gets close to a beacon, the app will navigate to a screen containing information about the landmark the user is close to. In addition, users are able to interact with Alli, UF's official chatbot, and ask any questions in relation to the University in general.
+Alligator Tours is an Android application compatible with Android SDK versions 21 and up. It utilizes the Google Maps API, the official University of Florida (UF) chatbot, and bluetooth low energy beacons to provide a unique user experience where prospective students and families can tour the campus and learn more about important landmarks/buildings. Users are able to choose between pre-made paths or create their own through the campus. When a user gets close enough to a beacon, the app will navigate to a screen containing information about the landmark that the user is close to (as beacons will be placed around Campus associated with specific landmarks). In addition, users are able to interact with Alli, UF's official chatbot, and ask any questions in relation to the University in general.
 
 ## How to Run
 To run this application, you will need to obtain a Google Maps API key, as well as CogUniversity authorization credentials. The developers can provide this information if authorized.
@@ -17,9 +17,8 @@ To run this application, you will need to obtain a Google Maps API key, as well 
 <li>Open the project in Android Studio</li>
 <li>Sync the project's Gradle files by clicking on the elephant icon in the top right. This will install any needed dependencies</li>
 <li>Note that valid API keys are needed to functionally run this project. Contact the developers if you believe you should have access to these keys.</li>
-<li>Run the app by clicking the green play button.</li>
+<li>Run the app on your emulator or own device by clicking the green play button.</li>
 </ol>
-
 
 ## Documentation 
 
