@@ -1,6 +1,6 @@
 # AlliGator Tours
 
-TODO: Add picture here
+
 
 ### Tour the University of Florida's campus with ease 
 
@@ -22,11 +22,13 @@ To run this application, you will need to obtain a Google Maps API key, as well 
 
 ## Documentation 
 
-More information about this application can be found at TODO: insert link to Production Release here.
+Guides and additional information about this application can be found [here](https://github.com/ChrisCJFern/AlliGators/blob/main/documentation/productionrelease.md).
 
-## Project Structure
+Specifically useful documentation when starting out:
 
-TODO: Include project structure information
+- [Gimbal Beacon Docs](https://docs.gimbal.com/android/v4/devguide.html)
+- [Google Maps API Docs](https://developers.google.com/maps/documentation)
+
 
 ## Future Work
 <ol>
