@@ -23,8 +23,16 @@ To run this application, you will need to obtain a Google Maps API key, as well 
 
 ## Documentation 
 
-More information about this application can be found at <insert link to Production Release here>. 
+More information about this application can be found at TODO: insert link to Production Release here.
 
 ## Project Structure
 
 TODO: Include project structure information
+
+## Future Work
+<ol>
+  <li>Extend the application to be cross-compatible with iOS devices. This would be a good future project.</li>
+  <li>Utilize a backend for tour location information</li>
+  <li>Enhance the way the chatbot displays responses (hyperlinks, different answers, etc.)</li>
+</ol>
+
