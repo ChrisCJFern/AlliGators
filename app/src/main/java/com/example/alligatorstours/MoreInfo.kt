@@ -39,6 +39,14 @@ class MoreInfo : AppCompatActivity() {
         locDrawables["Murphree Hall"] = R.drawable.murphreehall
         locDrawables["Smathers Library"] = R.drawable.smatherslibrary
 
+        locDrawables["Herbert Wertheim Laboratory"] = R.drawable.herbertwertheimlaboratory
+        locDrawables["Nuclear Sciences Building"] = R.drawable.nuclearsciences
+        locDrawables["Weil Hall"] = R.drawable.weilhall
+        locDrawables["Larsen Hall"] = R.drawable.larsenhall
+        locDrawables["Benton Hall"] = R.drawable.bentonhall
+        locDrawables["New Engineering Building"] = R.drawable.newengineeringbldg
+        locDrawables["Frazier-Rogers Hall"] = R.drawable.frazierrogershall
+
         locInfo["Reitz Union"] = "This building, officially called the J. Wayne Reitz Student Union," +
                 " was named for the University’s 5th president. The Reitz Union was completed in 1967," +
                 " and completely remodeled in 2016.  The Reitz is a student resource, and offers many" +
@@ -162,6 +170,14 @@ class MoreInfo : AppCompatActivity() {
                 "Library West provides hundreds of places for individual study, 200+ computers, numerous " +
                 "group study rooms, a Starbucks coffee shop, and iPads for checkout. The library is " +
                 "open 24/7 during the fall and spring semesters.\n"
+
+        locInfo["Herbert Wertheim Laboratory"] = ""
+        locInfo["Nuclear Sciences Building"] = ""
+        locInfo["Weil Hall"] = ""
+        locInfo["Larsen Hall"] = ""
+        locInfo["Benton Hall"] = ""
+        locInfo["New Engineering Building"] = ""
+        locInfo["Frazier-Rogers Hall"] = ""
 
         val title = intent.extras!!.getString("TITLE")
 

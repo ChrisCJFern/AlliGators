@@ -103,6 +103,14 @@ class TourActivity : AppCompatActivity(),
         locsMap["Murphree Hall"] = LatLng(29.651369840823783, -82.3466026455389)
         locsMap["Smathers Library"] = LatLng(29.651153532722645, -82.34162468416352)
 
+        locsMap["Herbert Wertheim Laboratory"] = LatLng(29.647612864552098, -82.34804453032935)
+        locsMap["Nuclear Sciences Building"] = LatLng(29.647597664585934, -82.34808078800083)
+        locsMap["Weil Hall"] = LatLng(29.648595238177315, -82.34852163032932)
+        locsMap["Larsen Hall"] = LatLng(29.64322790278327, -82.34729697080752)
+        locsMap["Benton Hall"] = LatLng(29.643602699511206, -82.3476550880009)
+        locsMap["New Engineering Building"] = LatLng(29.64246768304506, -82.34714712889709)
+        locsMap["Frazier-Rogers Hall"] = LatLng(29.64456607483957, -82.34544733032935)
+
         //Update Direction polyline button click listener function
         val dirbtn = findViewById<Button>(R.id.directions)
         dirbtn.setOnClickListener{

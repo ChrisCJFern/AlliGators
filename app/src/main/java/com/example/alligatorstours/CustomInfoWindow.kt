@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 
 class CustomInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter{
@@ -37,6 +38,14 @@ class CustomInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter{
         locDrawables["Newell Hall"] = R.drawable.newellhall
         locDrawables["Murphree Hall"] = R.drawable.murphreehall
         locDrawables["Smathers Library"] = R.drawable.smatherslibrary
+
+        locDrawables["Herbert Wertheim Laboratory"] = R.drawable.herbertwertheimlaboratory
+        locDrawables["Nuclear Sciences Building"] = R.drawable.nuclearsciences
+        locDrawables["Weil Hall"] = R.drawable.weilhall
+        locDrawables["Larsen Hall"] = R.drawable.larsenhall
+        locDrawables["Benton Hall"] = R.drawable.bentonhall
+        locDrawables["New Engineering Building"] = R.drawable.newengineeringbldg
+        locDrawables["Frazier-Rogers Hall"] = R.drawable.frazierrogershall
 
         locInfo["Reitz Union"] = "This building, officially called the J. Wayne Reitz Student Union," +
                 " was named for the University’s 5th president. The Reitz Union was completed in 1967," +
@@ -161,6 +170,14 @@ class CustomInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter{
                 "Library West provides hundreds of places for individual study, 200+ computers, numerous " +
                 "group study rooms, a Starbucks coffee shop, and iPads for checkout. The library is " +
                 "open 24/7 during the fall and spring semesters.\n"
+
+        locInfo["Herbert Wertheim Laboratory"] = ""
+        locInfo["Nuclear Sciences Building"] = ""
+        locInfo["Weil Hall"] = ""
+        locInfo["Larsen Hall"] = ""
+        locInfo["Benton Hall"] = ""
+        locInfo["New Engineering Building"] = ""
+        locInfo["Frazier-Rogers Hall"] = ""
 
         val TviewTitle = view.findViewById<TextView>(R.id.title)
         val TviewSnippet = view.findViewById<TextView>(R.id.snippet)

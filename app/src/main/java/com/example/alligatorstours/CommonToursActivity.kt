@@ -48,5 +48,36 @@ class CommonToursActivity : AppCompatActivity() {
             }
         }
 
+        val toEng = findViewById<Button>(R.id.engineeringTour)
+        toEng.setOnClickListener {
+            origin = "Weil Hall"
+            destination = "New Engineering Building"
+            waypointsArray.clear()
+            waypointsArray.addAll(mutableListOf("Nuclear Sciences Building","Herbert Wertheim Laboratory",
+                "Reitz Union","Career Connections Center","Frazier-Rogers Hall","Larsen Hall","Benton Hall"))
+
+            Intent(this, TourActivity::class.java).also {
+                it.putExtra("EXTRA_LOCATIONS", waypointsArray)
+                it.putExtra("ORIGIN", origin)
+                it.putExtra("DESTINATION", destination)
+                startActivity(it)
+            }
+        }
+
+//        val toLibSci = findViewById<Button>(R.id.LAnSTour)
+//        toLibSci.setOnClickListener {
+//            origin = ""
+//            destination = ""
+//            waypointsArray.clear()
+//            waypointsArray.addAll(mutableListOf(""))
+//
+//            Intent(this, TourActivity::class.java).also {
+//                it.putExtra("EXTRA_LOCATIONS", waypointsArray)
+//                it.putExtra("ORIGIN", origin)
+//                it.putExtra("DESTINATION", destination)
+//                startActivity(it)
+//            }
+//        }
+
     }
 }
