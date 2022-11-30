@@ -1,6 +1,7 @@
 # AlliGator Tours
 
-
+![Tour Map](https://github.com/ChrisCJFern/AlliGators/blob/main/pictures/map.png)
+![Tour Chatbot](https://github.com/ChrisCJFern/AlliGators/blob/main/pictures/chatbot.png)
 
 ### Tour the University of Florida's campus with ease 
 
@@ -35,5 +36,6 @@ Specifically useful documentation when starting out:
   <li>Extend the application to be cross-compatible with iOS devices.</li>
   <li>Create a backend for tour location information.</li>
   <li>Enhance chatbot responses (hyperlinks, different answers, etc.).</li>
+  <li>Create an official app downloadable on the Play Store/App Store</li>
 </ol>
 
