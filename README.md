@@ -36,5 +36,6 @@ Specifically useful documentation when starting out:
   <li>Extend the application to be cross-compatible with iOS devices.</li>
   <li>Create a backend for tour location information.</li>
   <li>Enhance chatbot responses (hyperlinks, different answers, etc.).</li>
+  <li>Create an official app downloadable on the Play Store/App Store</li>
 </ol>
 
