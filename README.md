@@ -1,6 +1,7 @@
-# AlliGator Tours
+# AlliGators Tours
 
-
+![Tour Map](https://github.com/ChrisCJFern/AlliGators/blob/main/pictures/map.png)
+![Tour Chatbot](https://github.com/ChrisCJFern/AlliGators/blob/main/pictures/chatbot.png)
 
 ### Tour the University of Florida's campus with ease 
 
