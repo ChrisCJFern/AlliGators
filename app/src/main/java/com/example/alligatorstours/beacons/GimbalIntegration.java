@@ -94,6 +94,7 @@ public class GimbalIntegration extends AppCompatActivity {
                 // TODO: Hardcoded Century Tower
                 Intent moreinfo = new Intent(appContext, MoreInfo.class);
                 moreinfo.putExtra("TITLE", "Century Tower");
+                moreinfo.putExtra("BEACON", "yes");
                 appContext.startActivity(moreinfo);
             }
 

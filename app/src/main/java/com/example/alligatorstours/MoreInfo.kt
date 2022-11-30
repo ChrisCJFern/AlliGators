@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.alligatorstours.beacons.GimbalIntegration
 
 class MoreInfo : AppCompatActivity() {
@@ -188,5 +189,16 @@ class MoreInfo : AppCompatActivity() {
         headerTitle.text = title
         locationInfo.text = locInfo[title]
         locDrawables.get(title)?.let { locIcon.setImageResource(it) }
+
+        var beacon = "no"
+        if(!intent.extras!!.getString("BEACON").isNullOrEmpty()){
+            beacon = intent.extras!!.getString("BEACON").toString()
+        }
+
+        if(beacon == "yes"){
+            Toast.makeText(this, "You have reached location: " + title.toString(), Toast.LENGTH_SHORT)
+                .show()
+        }
+
     }
 }
