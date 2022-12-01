@@ -81,7 +81,7 @@ Additionally, using location permissions, the live location of the user is reque
 ### AI Chatbot Alli
 The chatbot code is located within the “chatbot folder”. It interfaces with the Alli chatbot created by CogAbility. The CCA2Client java file contains the code used to create the chatbot client and to send a request to the chatbot API. Within the ChatActivity, the chatbot client is called and the response from the request is parsed and sent to the screen. This is located within the “CallClient” method. 
 
-For more information on how the text message UI is created, refer to [these helpful tutorials](https://www.youtube.com/watch?v=jeguYvdzknw)
+For more information on how the text message UI is created, refer to [these helpful tutorials](https://www.youtube.com/watch?v=jeguYvdzknw).
 
 ### Bluetooth Low Energy Beacons
 The beacon code is located within the “beacons” folder with two classes, GimbalApp and GimbalIntegration. It utilizes the [Gimbal Android SDK](https://docs.gimbal.com/android/v4/devguide.html) to connect to the bluetooth beacons. Note that this is a very high-level overview of how Gimbal app works within this specific application. For a more detailed specification, refer to the official SDK with the previously mentioned link.
