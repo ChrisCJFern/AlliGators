@@ -22,7 +22,7 @@ To run this application, you will need to obtain a Google Maps API key, as well 
 
 ## Documentation 
 
-Guides and additional information about this application can be found [here](https://github.com/ChrisCJFern/AlliGators/blob/main/documentation/productionrelease.md).
+Information about how this application is implemented can be found at the [production release document](https://github.com/ChrisCJFern/AlliGators/blob/main/documentation/productionrelease.md). A detailed report can be found [here](https://github.com/ChrisCJFern/AlliGators/blob/main/documentation/AlliGatorsFinalReport.pdf).
 
 Specifically useful documentation when starting out:
 
